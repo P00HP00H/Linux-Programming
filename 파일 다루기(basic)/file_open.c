@@ -23,8 +23,8 @@ int read_from_file(void)
                 return -1;
         }
 
-        fgets(buf, sizeof(buf), fp);    /* fp에서 문자열을 받아서 (sizeof(buf)-1)개의 문자를 입력받을 때까지나, 개행 문자("\n")나 파일 끝(End-of-File)에 도달할 때까지
-        입력 받아서 C형식의 문자열로 저장하며 개행 문자는 fgets로 하여금 입력을 끝나게 하지만 이 문자 역시 str에 저장 */
+        fgets(buf, sizeof(buf), fp);    /* fp에서 문자열을 받아서 (sizeof(buf)-1)개의 문자를 입력받을 때까지나, 개행문자("\n")나 파일 끝(End-of-File)에 도달할 때까지
+        입력 받아서 C형식의 문자열로 저장하며 개행문자("\n")는 fgets로 하여금 입력을 끝나게 하지만 이 문자 역시 buf에 저장 */
         fclose(fp);
 
         printf("읽어들인 문자열 : %s\n", buf);
