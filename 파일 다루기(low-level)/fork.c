@@ -13,10 +13,10 @@ void get_pid(void){
 int main(int argc, char **argv)
 {
 	int num2 = 20;  // 지역 변수 num2 = 20
-    printf("origin process pid : %d\n", getpid());  // 부모 프로세스에서만 실행됨
+    	printf("origin process pid : %d\n", getpid());  // 부모 프로세스에서만 실행됨
 
-    pid_t pid = fork();     // fork() -> 실패 시 반환 값 : -1, 성공 시 반환 값 : 자식 프로세스 PID,  자식 프로세스는 fork()의 반환값이 0
-    sleep(1);       // 자식 프로세스는 부모 프로세스를 그대로 불러오는 것이므로 위의 코드들은 부모 프로세스에서 이미 실행된 것들이므로 다시 실행 X -> 대신 상태 그대로 가져옴
+    	pid_t pid = fork();     // fork() -> 실패 시 반환 값 : -1, 성공 시 반환 값 : 자식 프로세스 PID,  자식 프로세스는 fork()의 반환값이 0
+    	sleep(1);       // 자식 프로세스는 부모 프로세스를 그대로 불러오는 것이므로 위의 코드들은 부모 프로세스에서 이미 실행된 것들이므로 다시 실행 X -> 대신 상태 그대로 가져옴
        
 	if(pid == 0){
 		/* child process */
